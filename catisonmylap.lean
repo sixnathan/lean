@@ -54,10 +54,19 @@ we can produce a proof of false by assuming p and not p therefore -/
 example (hnp : ¬p) (hp : p) : q := hnp hp   
 -- why does this not work? 
 
+example (hnp : ¬p) (hp : p) : q := False.elim (hnp hp) 
+-- YAY we have proven it 
+
+example (hnp : ¬p) (hp : p) : q := absurd hp hnp 
+-- this is saying that if you assume that p is both true and false then you can prove anything (as there is a contradiction) 
+
+example : p∧q ↔ q ∧ p := Iff.intro (λ hpq : p∧q => ⟨hpq.right, hpq.left⟩ ) (λ hqp : q∧ p => ⟨hqp.right, hqp.left⟩)   
 
 
+-- YES this is so cool i cant believe that i proved this ! YAY 
 
 
+  
 
 
 
