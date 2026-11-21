@@ -66,7 +66,9 @@ example : p∧q ↔ q ∧ p := Iff.intro (λ hpq : p∧q => ⟨hpq.right, hpq.le
 -- YES this is so cool i cant believe that i proved this ! YAY 
 
 
-  
-
+example : (p ∨ q) ∨ r ↔ p ∨ (q ∨ r) := 
+  Iff.intro 
+  (λ h => _)
+  (λ h => _)
 
 
